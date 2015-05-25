@@ -9,7 +9,7 @@
 
 <body>
  <div class="container">
-  <div class="page-header">Guessing Game 
+  <div class="page-header">Guessing Game
   </div>
 
   <div class="container">
@@ -22,21 +22,49 @@
       <li>If you lose, just play again, but the number may or may not be the same</li>
     </ul>
   </div>
-  
+
   <div class="container">
   	<h1>Ready to play? </h1>
   </div>
-  
+
+
+
   <div class="container">
-		<p style="color:#0f9;">Make Your Guess:</p>
-		<input type="number" name="guess" min="1" max="100">
-        <input type="submit" value="Submit">
-        <p style="color: #0f9; font-size: 11px;">Guesses Left:</p>
-        <input type="submit" value="I need my hint">
-        <br>
-        <br>
-        <input type="submit" value="Let's play again!">
+		<div class="row">
+      <div class="col-xs-2">
+        <p style="color:#0f9;">Make Your Guess:</p>
+    		<input type="number" name="guess" min="1" max="100">
+        <input id="submit" type="submit" value="Submit">
+        <p style="color: #0f9; font-size: 11px;">
+        Guesses Left:
+        <span id="guesses"> </span>
+        </p>
+      </div>
+      <div class="col-xs-2">
+        <div class="table">
+            <table id="guessTable" class="table table-bordered" style="color:#0f9;">
+                <thead>
+                    <tr>
+                        <th>Guess</th>
+                        <th>Hot or Cold</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+      </div>
+
+    </div>
   </div>
+  <div class="container">
+    <input id="useHint" type="submit" value="Use hint">
+    <input id="playAgain" type="submit" value="New Game">
+  </div>
+
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="guessingGame.js"></script>
+
  </div>
 
 </body>
