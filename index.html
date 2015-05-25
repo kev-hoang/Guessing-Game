@@ -7,19 +7,22 @@
 
 </head>
 
-<body>
+<body id="body">
  <div class="container">
   <div class="page-header">Guessing Game
   </div>
 
+
   <div class="container">
     <h1>Instructions</h1>
-    <p>Guess the number that was generated.</p>
+    <p>Goal: Guess the number from 1-100.</p>
     <ul>
-      <li>You have 3 guesses</li>
-      <li>You will be informed if you are hotter (closer) or colder (further) from the number</li>
-      <li>Using the hint will cost you a guess but will tell you how many numbers away you are.</li>
+      <li>You have 5 guesses</li>
+      <li>Hot is when you are less than 20 numbers away from answer. Cold is 20 or more numbers away.</li>
+      <li>You will be informed if you are hotter (closer) or colder (further) to the number versus your last guess.</li>
+      <li>Using the hint will tell you the answer.</li>
       <li>If you lose, just play again, but the number may or may not be the same</li>
+      <li>Get it in 1 try for special congratulations!</li>
     </ul>
   </div>
 
@@ -27,17 +30,15 @@
   	<h1>Ready to play? </h1>
   </div>
 
-
-
   <div class="container">
 		<div class="row">
       <div class="col-xs-2">
-        <p style="color:#0f9;">Make Your Guess:</p>
-    		<input type="number" name="guess" min="1" max="100">
-        <input id="submit" type="submit" value="Submit">
+        <p style="color:#0f9;">Make Your Guess: <br>(Integers Only)</p>
+    		<input id="guessField" type="number" name="guess" min="1" max="100" value="1">
+        <input id="submitGuess" type="submit" value="Submit">
         <p style="color: #0f9; font-size: 11px;">
         Guesses Left:
-        <span id="guesses"> </span>
+        <span id="guessesLeft"> </span>
         </p>
       </div>
       <div class="col-xs-2">
@@ -54,16 +55,36 @@
             </table>
         </div>
       </div>
+      <div class="col-xs-2">
+        <div class="table">
+            <table id="recordTable" class="table table-bordered" style="color:#0f9;">
+                <thead>
+                    <tr>
+                        <th>Played</th>
+                        <th>Won</th>
+                        <th>Cheated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td id="played">0</td>
+                    <td id="won">0</td>
+                    <td id="cheated">0</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+      </div>
 
     </div>
   </div>
   <div class="container">
     <input id="useHint" type="submit" value="Use hint">
-    <input id="playAgain" type="submit" value="New Game">
+    <input id="newGame" type="submit" value="New Game">
   </div>
 
   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="guessingGame.js"></script>
+  <script src="js/guessingGame.js"></script>
 
  </div>
 

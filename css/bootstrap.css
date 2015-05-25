@@ -13,8 +13,7 @@ html {
 }
 body {
   margin: 0;
-  background-image: url("http://upload.wikimedia.org/wikipedia/commons/1/18/DSCN1265.JPG");
-  position: fixed;
+  background-image: url("../Images/background_default.jpg");
   top: 0;
   left: 0;
 
